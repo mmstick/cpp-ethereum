@@ -1,6 +1,6 @@
 ## ethminer-genoil
 
-What is ethminer-0.9.41-genoil-1.x.x? 
+What is ethminer-0.9.41-genoil-1.x.x?
 
 Formerly known as Genoil's CUDA miner, ethminer-0.9.41-genoil-1.x.x is a fork of the stock ethminer version 0.9.41. While native CUDA support is its most significant difference, it has the following additional features:
 
@@ -13,7 +13,7 @@ Formerly known as Genoil's CUDA miner, ethminer-0.9.41-genoil-1.x.x is a fork of
 ### Usage
 
 ethminer is a command line program. This means you launch it either from a Windows command prompt or Linux console, or create shortcuts to predefined command lines using a Linux Bash script or Windows batch/cmd file.
-for a full list of available command, please run 
+for a full list of available command, please run
 
 ```
 ethminer --help
@@ -22,7 +22,7 @@ ethminer --help
 ### F.A.Q
 
 1. Why is my hashrate with Nvidia cards on Windows 10 so low?
-The new WDDM 2.x driver on Windows 10 uses a different way of addressing the GPU. This is good for a lot of things, but not for ETH mining. 
+The new WDDM 2.x driver on Windows 10 uses a different way of addressing the GPU. This is good for a lot of things, but not for ETH mining.
 For Kepler GPUs: I actually don't know. Please let me know what works best for good old Kepler.
 For Maxwell 1 GPUs: Unfortunately the issue is a bit more serious on the GTX750Ti, already causing suboptimal performance on Win7 and Linux. Apparently about 4MH/s can still be reached on Linux, which, depending on ETH price, could still be profitable, considering the relatively low power draw.
 For Maxwell 2 GPUs: There is a way of mining ETH at Win7/8/Linux speeds on Win10, by downgrading the GPU driver to a Win7 one (350.12 recommended) and using a [build that was created using CUDA 6.5](releases/cuda-6.5).
@@ -49,7 +49,7 @@ setx GPU_MAX_ALLOC_PERCENT = 100
 No.
 
 6. What are the optimal launch parameters?
-The default parameters are fine in most scenario's (CUDA). For OpenCL it varies a bit more. Just play around with the numbers and use powers of 2. GPU's like powers of 2. 
+The default parameters are fine in most scenario's (CUDA). For OpenCL it varies a bit more. Just play around with the numbers and use powers of 2. GPU's like powers of 2.
 
 7. Is your miner faster than the stock miner?
 In CUDA yes, in OpenCL only on Nvidia .
@@ -67,7 +67,7 @@ Windows x64 binaries can be found in the /releases folder.
 ### Build options
 
 - if you don't want/need CUDA support, use "-DBUNDLE=miner" instead of "-DBUNDLE=cudaminer". This will only compile OpenCL support
-- to speed up compilation a bit or to support older CUDA shader models, you can add -DCOMPUTE=xx , where x is your CUDA GPU Compute version * 10. i.e -DCOMPUTE=52 for a GTX970.  
+- to speed up compilation a bit or to support older CUDA shader models, you can add -DCOMPUTE=xx , where x is your CUDA GPU Compute version * 10. i.e -DCOMPUTE=52 for a GTX970.
 - you may disable stratum support by adding -DETH_STRATUM=0
 
 
@@ -75,11 +75,11 @@ Windows x64 binaries can be found in the /releases folder.
 
 - download or clone this repository
 - download and install Visual Studio 12 2013 and CMake
-- run [getstuff.bat](extdep/getstuff.bat) in [cpp-ethereum/extdep](extdep) 
+- run [getstuff.bat](extdep/getstuff.bat) in [cpp-ethereum/extdep](extdep)
 - open a command prompt and navigate to cpp-ethereum directory
 
-``` 
-mkdir build 
+```
+mkdir build
 cd build
 cmake -DBUNDLE=cudaminer -G "Visual Studio 12 2013 Win64" ..
 ```
@@ -99,7 +99,7 @@ sudo apt-get update
 sudo apt-get -y install software-properties-common
 add-apt-repository -y ppa:ethereum/ethereum
 sudo apt-get update
-sudo apt-get install git cmake libcryptopp-dev libleveldb-dev libjsoncpp-dev libjson-rpc-cpp-dev libboost-all-dev libgmp-dev libreadline-dev libcurl4-gnutls-dev ocl-icd-libopencl1 opencl-headers mesa-common-dev libmicrohttpd-dev build-essential -y
+sudo apt-get install git cmake libcryptopp-dev libleveldb-dev libjsoncpp-dev libjsonrpccpp-dev libboost-all-dev libgmp-dev libreadline-dev libcurl4-gnutls-dev ocl-icd-libopencl1 opencl-headers mesa-common-dev libmicrohttpd-dev build-essential -y
 git clone https://github.com/Genoil/cpp-ethereum/
 cd cpp-ethereum/
 mkdir build
@@ -118,7 +118,7 @@ sudo dpkg -i cuda-repo-ubuntu1404_7.5-18_amd64.deb
 sudo apt-get -y install software-properties-common
 sudo add-apt-repository -y ppa:ethereum/ethereum
 sudo apt-get update
-sudo apt-get install git cmake libcryptopp-dev libleveldb-dev libjsoncpp-dev libjson-rpc-cpp-dev libboost-all-dev libgmp-dev libreadline-dev libcurl4-gnutls-dev ocl-icd-libopencl1 opencl-headers mesa-common-dev libmicrohttpd-dev build-essential cuda -y
+sudo apt-get install git cmake libcryptopp-dev libleveldb-dev libjsoncpp-dev libjsonrpccpp-dev libboost-all-dev libgmp-dev libreadline-dev libcurl4-gnutls-dev ocl-icd-libopencl1 opencl-headers mesa-common-dev libmicrohttpd-dev build-essential cuda -y
 git clone https://github.com/Genoil/cpp-ethereum/
 cd cpp-ethereum/
 mkdir build
